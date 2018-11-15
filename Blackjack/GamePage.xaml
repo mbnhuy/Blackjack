@@ -8,11 +8,11 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     xmlns:controls="using:Microsoft.UI.Xaml.Controls">
-    
+
 
     <Grid>
-        <TextBlock x:Name="GamePageTitle" Margin="570,68,558,0" Text="Game Page" TextWrapping="Wrap" VerticalAlignment="Top" Height="154" FontSize="72" HorizontalAlignment="Center"/>
-        <controls:NavigationView Content="NavigationView" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="1490" Height="53"/>
+        <TextBlock x:Name="GamePageTitle" Margin="570,63,475,0" Text="Game Page" TextWrapping="Wrap" VerticalAlignment="Top" Height="154" FontSize="72" HorizontalAlignment="Stretch"/>
+        <controls:NavigationView Content="NavigationView" HorizontalAlignment="Center" VerticalAlignment="Top" PaneDisplayMode="Top" Height="111" Width="1500" RequestedTheme="Default" IsBackEnabled="True" IsBackButtonVisible="Visible" HighContrastAdjustment="Application" BackRequested="BackToMain" Margin="0,0,0,0"/>
 
     </Grid>
 </Page>

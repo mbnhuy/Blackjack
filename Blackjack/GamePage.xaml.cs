@@ -27,5 +27,10 @@ namespace Blackjack
         {
             this.InitializeComponent();
         }
+
+        private void BackToMain(MUXC.NavigationView sender, MUXC.NavigationViewBackRequestedEventArgs args)
+        {
+            this.Frame.Navigate(typeof(MainPage));
+        }
     }
 }
