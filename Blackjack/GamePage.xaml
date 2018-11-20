@@ -11,8 +11,7 @@
 
 
     <Grid>
-        <TextBlock x:Name="GamePageTitle" Margin="570,63,475,0" Text="Game Page" TextWrapping="Wrap" VerticalAlignment="Top" Height="154" FontSize="72" HorizontalAlignment="Stretch"/>
-        <controls:NavigationView Content="NavigationView" HorizontalAlignment="Center" VerticalAlignment="Top" PaneDisplayMode="Top" Height="111" Width="1500" RequestedTheme="Default" IsBackEnabled="True" IsBackButtonVisible="Visible" HighContrastAdjustment="Application" BackRequested="BackToMain" Margin="0,0,0,0"/>
-
+        <TextBlock x:Name="GamePageTitle" HorizontalAlignment="Center" Text="Game Page" VerticalAlignment="Top" FontSize="72" Margin="0,50,0,0"/>
+        <controls:NavigationView  HorizontalAlignment="Left" VerticalAlignment="Top" RequestedTheme="Default" IsBackEnabled="True" IsBackButtonVisible="Visible" HighContrastAdjustment="Application" BackRequested="BackToMain" Margin="10,0,0,0"/>
     </Grid>
 </Page>
