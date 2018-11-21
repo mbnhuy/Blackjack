@@ -21,7 +21,7 @@ namespace Blackjack
             string[] faces = {"Ace", "2", "3", "4",  "5",
                               "6", "7", "8", "9", "10",
                               "Jack", "Queen", "King"};
-
+             
             //suits: Clubs, Diamonds, Hearts, Spades
             string[] suits = { "C", "D", "H", "S" };
 
