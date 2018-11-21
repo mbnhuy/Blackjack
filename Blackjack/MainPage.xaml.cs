@@ -49,5 +49,35 @@ namespace Blackjack
         {
             // TODO: Write the method to exit the program
         }
+
+        /// <summary>
+        /// Pressing settings button will bring up the options menu.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Settings.IsPaneOpen = !Settings.IsPaneOpen;
+        }
+
+        /// <summary>
+        /// Toggles option one depending on which radio button is pressed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Toggle_Option_1(object sender, RoutedEventArgs e)
+        {
+            // TODO: FIGURE OUT OPTION 1 AND CHANGE NAME IN XAML
+        }
+
+        /// <summary>
+        /// Toggles option two depending on which radio button is pressed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Toggle_Option_2(object sender, RoutedEventArgs e)
+        {
+            // TODO: FIGURE OUT OPTION 2 AND CHANGE NAME IN XAML
+        }
     }
 }

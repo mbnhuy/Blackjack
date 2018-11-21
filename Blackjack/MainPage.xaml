@@ -6,24 +6,51 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    xmlns:controls="using:Microsoft.UI.Xaml.Controls">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <RowDefinition  Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        
+
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition MinWidth="250" Width="1.5*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="1.5*" />
         </Grid.ColumnDefinitions>
+
+        <StackPanel  Orientation="Horizontal">
+            <SplitView Name="Settings" DisplayMode="Overlay">
+                <SplitView.Pane>
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal">
+                            <RadioButton
+                                Content="Yes_Option_1" GroupName="Group1"  Checked="Toggle_Option_1" IsChecked="True"/>
+                            <RadioButton
+                                 Content="No_Option_1" GroupName="Group1" Checked="Toggle_Option_1"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <RadioButton
+                                Content="Yes_Option2" GroupName="Group2" Checked="Toggle_Option_2" IsChecked="True"/>
+                            <RadioButton
+                                Content="No_Option2" GroupName="Group2" Checked="Toggle_Option_2"/>
+                        </StackPanel>
+                    </StackPanel>
+                </SplitView.Pane>
+                <SplitView.Content>
+                    <Button   Name="Menu" Content="Settings" Click="Button_Click" VerticalAlignment="Top" Width="70" />
+                </SplitView.Content>
+            </SplitView>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,200,0,0">
+            <Button Background="Green" Margin="0,0,420,0" Name="StartButton" Content="Start" FontSize="45" Click="StartGame"/>
+            <Button Background="Red" Margin="0,0,0,0" Name="QuitButton" Content="Quit" FontSize="45" Click="QuitGame"/>
+        </StackPanel>
         
-        <Button Grid.Row="1" Grid.Column="1" Margin="0,250" Name="StartButton" Content="Start" HorizontalAlignment="Left"  VerticalAlignment="Center"  FontSize="45" Click="StartGame"/>
-        <Button Grid.Row="1" Grid.Column="1" Name="QuitButton" Content="Quit" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="45" Click="QuitGame"/>
-        <TextBlock Grid.Row="0" Grid.Column="1" Margin ="0,20,0,0" Text="Main Menu" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="72" HorizontalAlignment="Center"/>
-     </Grid>
+        <TextBlock Grid.Row="0" Grid.Column="1" Margin ="0,20,0,0" Text="Main Menu" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="60" HorizontalAlignment="Center"/>
+    
+    </Grid>
 </Page>
