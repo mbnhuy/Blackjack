@@ -7,50 +7,92 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+    <ScrollViewer VerticalScrollBarVisibility="Hidden">
+        <Grid Background="#FF05A205">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition MinWidth="250" Width="1.5*" />
-            <ColumnDefinition Width="3*" />
-            <ColumnDefinition Width="1.5*" />
-        </Grid.ColumnDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="3*" />
+                <!--Middle column takes 3/5 of total width-->
+                <ColumnDefinition Width= "*" />
+            </Grid.ColumnDefinitions>
 
-        <StackPanel  Orientation="Horizontal">
-            <SplitView Name="Settings" DisplayMode="Overlay">
-                <SplitView.Pane>
-                    <StackPanel Orientation="Vertical">
-                        <StackPanel Orientation="Horizontal">
-                            <RadioButton
-                                Content="Yes_Option_1" GroupName="Group1"  Checked="Toggle_Option_1" IsChecked="True"/>
-                            <RadioButton
-                                 Content="No_Option_1" GroupName="Group1" Checked="Toggle_Option_1"/>
+            <RelativePanel  Grid.ColumnSpan="2"> 
+                <!--Settings Menu Button--> 
+                <Button
+                Name="Menu" Content="&#xE713;" FontFamily="Segoe MDL2 Assets" FontSize="25"  
+                Click="Settings_Click" VerticalAlignment="Top" RequestedTheme="Default" FontWeight="Bold"
+                Foreground="White" Background="Black" IsDoubleTapEnabled="False" />
+
+
+                <!--Settings Menu-->
+                <SplitView OpenPaneLength="100" RelativePanel.Below="Menu" Name="Settings"
+                           DisplayMode="Inline" RequestedTheme="Dark" >
+                    <SplitView.Pane>
+                        <StackPanel Orientation="Vertical">
+                            <!--Outer stack to stack different options vertically-->
+                            <StackPanel Orientation="Vertical">
+                                <!--Inner stacks orientate each separate option horizontally-->
+                                <TextBlock VerticalAlignment="Center" Margin="0,0,20,0" FontWeight="Bold" Text="Option 1" />
+                                <RadioButton
+                                    Name ="Option1a" Content="Yes" GroupName="Group1"  Checked="Toggle_Option_1" IsChecked="True"/>
+                                <RadioButton
+                                     Name="Option1b" Content="No" Margin="0,0,0,10" GroupName="Group1" Checked="Toggle_Option_1"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock VerticalAlignment="Center" Margin="0,0,20,0" Text="Option 2"/>
+                                <RadioButton
+                                    Name="Option2a" Content="Yes" GroupName="Group2" Checked="Toggle_Option_2" IsChecked="True"/>
+                                <RadioButton
+                                    Name="Option2b" Content="No" GroupName="Group2" Checked="Toggle_Option_2" IsChecked="False"/>
+                            </StackPanel>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <RadioButton
-                                Content="Yes_Option2" GroupName="Group2" Checked="Toggle_Option_2" IsChecked="True"/>
-                            <RadioButton
-                                Content="No_Option2" GroupName="Group2" Checked="Toggle_Option_2"/>
-                        </StackPanel>
-                    </StackPanel>
-                </SplitView.Pane>
-                <SplitView.Content>
-                    <Button   Name="Menu" Content="Settings" Click="Button_Click" VerticalAlignment="Top" Width="70" />
-                </SplitView.Content>
-            </SplitView>
-        </StackPanel>
+                    </SplitView.Pane>
+                </SplitView>
+            </RelativePanel>
 
-        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,200,0,0">
-            <Button Background="Green" Margin="0,0,420,0" Name="StartButton" Content="Start" FontSize="45" Click="StartGame"/>
-            <Button Background="Red" Margin="0,0,0,0" Name="QuitButton" Content="Quit" FontSize="45" Click="QuitGame"/>
-        </StackPanel>
-        
-        <TextBlock Grid.Row="0" Grid.Column="1" Margin ="0,20,0,0" Text="Main Menu" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="60" HorizontalAlignment="Center"/>
-    
-    </Grid>
+            <StackPanel Grid.Column="1"  Orientation="Vertical" Margin="0,300,0,0" HorizontalAlignment="Center">
+                <Button Name="StartMode1" Margin="0,0,0,16" Content="Start Mode 1"
+                        Background="#FF5DC25D"  BorderThickness="6" BorderBrush="Black" Foreground="Black" 
+                        FontSize="50" Click="Start_Mode1"/>
+                <Button Name="StartMode2" Margin="0,0,0,16" Content="Start Mode 2"
+                        Background="#FF5DC25D" BorderBrush="Black" BorderThickness="6" Foreground="Black"
+                        FontSize="50" Click="Start_Mode2"/>
+                <Button Name="QuitButton" Content="Exit Game" HorizontalAlignment="Center"
+                        FontSize="50" Background="#FFFC0000" BorderBrush="Black" BorderThickness="6"
+                        Margin="0,0,0,0" VerticalAlignment="Center" Width="300">
+                    <Button.Flyout>
+                        <Flyout x:Name="QuitFlyout">
+                            <RelativePanel>
+                                <TextBlock Name="Quit"
+                                           Text="Quit Game?"
+                                           HorizontalAlignment="Center"
+                                           Margin="8,0,0,8"/>
+                                <Button Name="QuitConfirm"
+                                        RelativePanel.Below="Quit"
+                                        Content="Yes"
+                                        Click="Quit_Game"
+                                        Margin="0,0,10,0"/>
+                                <Button Name="QuitCancel"
+                                        RelativePanel.RightOf="QuitConfirm"
+                                        RelativePanel.Below="Quit"
+                                        Content="No"
+                                        Click="Close_Flyout"/>
+                            </RelativePanel>
+                        </Flyout>
+                    </Button.Flyout>
+                </Button>
+            </StackPanel>
+
+            <TextBlock Name="Title" Grid.Row="0" Grid.Column="1" Margin ="0,20,0,0" Text="Main Menu" 
+                       TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Center"
+                       Style="{ThemeResource TitleTextBlockStyle}" Foreground="#FFF6E2E2" FontWeight="Bold" FontSize="50"/>
+
+        </Grid>
+    </ScrollViewer>
 </Page>

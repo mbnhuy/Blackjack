@@ -6,23 +6,25 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    xmlns:controls="using:Microsoft.UI.Xaml.Controls">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
 
     <Grid>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Name="GamePageTitle" HorizontalAlignment="Center" Text="BlackJack" VerticalAlignment="Top" FontSize="72" Margin="0,50,0,0" FontWeight="Bold" FontStyle="Normal"/>
-        <TextBlock Grid.Row="3" Name="Card1"  HorizontalAlignment="Center"  VerticalAlignment="Top" FontSize="70" Margin="0,50.2,0,0" FontStyle="Normal" Height="157" UseLayoutRounding="False" Width="73" d:LayoutRounding="Auto" RenderTransformOrigin="0.5,0.5">
-            <TextBlock.RenderTransform>
-                <RotateTransform Angle="-15"/>
-            </TextBlock.RenderTransform>
-        </TextBlock>
-        <controls:NavigationView  HorizontalAlignment="Left" VerticalAlignment="Top" RequestedTheme="Default" IsBackEnabled="True" IsBackButtonVisible="Visible" HighContrastAdjustment="Application" BackRequested="BackToMain" Margin="10,0,0,0"/>
+
+        <TextBlock Grid.Row="0" 
+                   Name="GamePageTitle" 
+                   HorizontalAlignment="Center" 
+                   Text="BlackJack" 
+                   VerticalAlignment="Top" 
+                   FontSize="72"
+                   Margin="0,50,0,0" 
+                   FontWeight="Bold"/>
     </Grid>
 </Page>
