@@ -56,7 +56,7 @@ namespace Blackjack
         {
             // TODO: FIGURE OUT OPTION 1 AND CHANGE NAME IN XAML
         }
-        
+
         // TODO: KEEP OPTIONS CHECKED BETWEEN PAGE CHANGES.
 
         /// <summary>
