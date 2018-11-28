@@ -8,7 +8,7 @@ namespace Blackjack
 {
     class Deck
     {
-        private string[] deck_Of_Cards;
+       /* private string[] deck_Of_Cards;
         private const int num_Faces = 13;
         private const int num_Suits = 4;
         private const int num_Cards = 52;
@@ -57,6 +57,6 @@ namespace Blackjack
         public string ReturnCard(int card)
         {
             return deck_Of_Cards[card];
-        }
+        }*/
     }
 }

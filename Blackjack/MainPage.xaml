@@ -7,8 +7,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <ScrollViewer VerticalScrollBarVisibility="Hidden">
-        <Grid Background="#FF05A205">
+    
+    <ScrollViewer VerticalScrollBarVisibility="Visible">
+        <Grid Background="DarkGreen">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
@@ -22,8 +23,8 @@
                 <ColumnDefinition Width= "*" />
             </Grid.ColumnDefinitions>
 
-            <RelativePanel  Grid.ColumnSpan="2">
-                <!--Settings Menu Button-->
+            <RelativePanel  Grid.ColumnSpan="2"> 
+                <!--Settings Menu Button--> 
                 <Button
                 Name="Menu" Content="&#xE713;" FontFamily="Segoe MDL2 Assets" FontSize="25"  
                 Click="Settings_Click" VerticalAlignment="Top" RequestedTheme="Default" FontWeight="Bold"
@@ -56,16 +57,18 @@
                 </SplitView>
             </RelativePanel>
 
+            <!--Start and Exit Buttons-->
             <StackPanel Grid.Column="1"  Orientation="Vertical" Margin="0,300,0,0" HorizontalAlignment="Center">
                 <Button Name="StartMode1" Margin="0,0,0,16" Content="Start Mode 1"
-                        Background="#FF5DC25D"  BorderThickness="6" BorderBrush="Black" Foreground="Black" 
-                        FontSize="50" Click="Start_Mode1"/>
+                        Background="#66FFFFFF"  BorderThickness="6" BorderBrush="Black" Foreground="Black" 
+                        FontSize="30" Click="Start_Mode1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
                 <Button Name="StartMode2" Margin="0,0,0,16" Content="Start Mode 2"
-                        Background="#FF5DC25D" BorderBrush="Black" BorderThickness="6" Foreground="Black"
-                        FontSize="50" Click="Start_Mode2"/>
-                <Button Name="QuitButton" Content="Exit Game" HorizontalAlignment="Center"
-                        FontSize="50" Background="#FFFC0000" BorderBrush="Black" BorderThickness="6"
-                        Margin="0,0,0,0" VerticalAlignment="Center" Width="300">
+                        Background="#66FFFFFF" BorderBrush="Black" BorderThickness="6" Foreground="Black"
+                        FontSize="30" Click="Start_Mode2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                <Button Name="QuitButton" Content="Exit Game" HorizontalAlignment="Stretch"
+                        FontSize="30" Background="#FFFC0000" BorderBrush="Black" BorderThickness="6"
+                        Margin="0,0,0,0" VerticalAlignment="Stretch">
+                    <!--Creates a popup confirming application shutdown-->
                     <Button.Flyout>
                         <Flyout x:Name="QuitFlyout">
                             <RelativePanel>
